@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav.superior {
+    height: 40px;
+    background-color: aqua;
+}
+
+.container {
+    display: flex;
+}
+
+nav.esquerda {
+    flex-basis: 300px;
+    flex-shrink: 0;
+    height: 400px;
+    background-color: green;
+}
+
+div.conteudo {
+    flex-basis: calc((2*(100vw - 300px))/3);
+    flex-shrink: 0;
+    overflow: hidden;
+    height: 400px;
+    background-color: red;
+}
+
+nav.direita {
+    flex-basis: calc((100vw - 300px)/3);
+    flex-shrink: 0;
+    height: 400px;
+    background-color: blue;
+}
