@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav.superior {
+    height: 40px;
+    background-color: aqua;
+}
+
+.container {
+    display: flex;
+}
+
+nav.esquerda {
+    flex-grow: 1;
+    height: 400px;
+    background-color: green;
+}
+
+div.conteudo {
+    flex-grow: 2;
+    height: 400px;
+    background-color: red;
+}
+
+nav.direita {
+    flex-grow: 1;
+    height: 400px;
+    background-color: blue;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}

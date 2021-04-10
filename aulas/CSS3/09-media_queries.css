@@ -1,0 +1,11 @@
+.colorida {
+    width: 400px;
+    height: 400px;
+    background-color: blue;
+}
+
+@media screen and (min-width: 580px){
+    .colorida {
+        background-color: green;
+    }
+}
