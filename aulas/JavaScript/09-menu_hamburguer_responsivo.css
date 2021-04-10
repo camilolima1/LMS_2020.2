@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navegador {
+    background-color: #f8f9fa;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navegador .cabecalho-navegador {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.navegador .cabecalho-navegador button {
+    margin-left: auto;
+    padding: 9px 20px;
+    outline: none;
+    border: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.navegador .menu-retratil {
+    height: 0px;
+    overflow: hidden;
+    transition: height 600ms;
+    position: absolute;
+    background-color: #f8f9fa;
+    width: 100%;
+}
+
+.navegador .menu-retratil.active {
+    height: 232px;
+}
+
+.navegador .menu-retratil a, nav.esquerdo a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+}
+
+.navegador .menu-retratil a:hover, nav.esquerdo a:hover {
+    background-color: lightgray;
+}
+
+nav.esquerdo {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .navegador .cabecalho-navegador button {
+        display: none;
+    }
+
+    .navegador .menu-retratil {
+        display: none;
+    }
+
+    nav.esquerdo {
+        display: block;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: calc(100vh - 42px);
+        width: 30%;
+        background-color: #f8f9fa;
+    }
+
+    .container {
+        margin-left: 30%;
+    }
+}

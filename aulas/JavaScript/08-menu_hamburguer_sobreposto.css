@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navegador {
+    background-color: #f8f9fa;
+}
+
+.navegador .cabecalho-navegador {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.navegador .cabecalho-navegador button {
+    margin-left: auto;
+    padding: 9px 20px;
+    outline: none;
+    border: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.navegador .menu-retratil {
+    height: 0px;
+    overflow: hidden;
+    transition: height 600ms;
+    position: absolute;
+    background-color: #f8f9fa;
+    width: 100%;
+}
+
+.navegador .menu-retratil.active {
+    height: 232px;
+}
+
+.navegador .menu-retratil a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+}
+
+.navegador .menu-retratil a:hover {
+    background-color: lightgray;
+}

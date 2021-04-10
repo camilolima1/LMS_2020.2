@@ -1,9 +1,0 @@
-.todo-galeria {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.todo-galeria .card {
-    margin: 10px;
-}
