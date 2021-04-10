@@ -1,0 +1,30 @@
+.todo-galeria {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.todo-galeria .card {
+    margin: 10px;
+    width: 18rem;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+}
+
+#form-novo-todo {
+    display: flex;
+    flex-direction: column;
+}
+
+#form-novo-todo input {
+    margin: 4px;
+}
+
+#form-novo-todo button {
+    width: 80px;
+    margin: 4px auto;
+}

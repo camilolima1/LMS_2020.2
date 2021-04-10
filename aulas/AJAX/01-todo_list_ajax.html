@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- importando css bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="01-todo_list_ajax.css">
+  
+  <title>Document</title>
+</head>
+
+<body>
+  
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">My Todo List</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Página inicial</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Meus recados</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sobre</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="todo-galeria">
+  
+</div>
+
+<div class="form">
+  <form id="form-novo-todo">
+    <input id="titulo" type="text" class="form-control" placeholder="Insira o título" style="width:500px">
+    <input id="corpo" type="text" class="form-control" placeholder="Insira o corpo" style="width:500px">
+    <button class="button_form">Inserir</button>
+  </form>
+</div>
+
+<!-- importando js bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+crossorigin="anonymous"></script>
+
+<!-- Import Axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+
+  function postNotesandAtualizarPagina(corpo, todoId){
+    axios({
+      method: "POST",
+      url: "https://server-json-lms.herokuapp.com/notes",
+      data:{
+        corpo: corpo,
+        todoId: todoId,
+      }
+    }).then((response) => {
+      atualizarTodoList();
+    }).catch((error) => {
+      console.log(error);
+    })
+  }
+  
+  let todo_galeria = document.querySelector(".todo-galeria");
+  
+  function criarCard(id, titulo, corpo, notes) {
+    let card = document.createElement("div");
+    card.classList.add("card");
+    
+    let card_body = document.createElement("div");
+    card_body.classList.add("card-body");
+    
+    let card_title = document.createElement("h5");
+    card_title.classList.add("card-title");
+    card_title.textContent = titulo;
+    
+    let card_text = document.createElement("p");
+    card_text.classList.add("card-text");
+    card_text.textContent = corpo;
+    
+    card.appendChild(card_body);
+    card_body.appendChild(card_title);
+    card_body.appendChild(card_text);
+    
+    let list_group = document.createElement("ul");
+    list_group.classList.add("list-group", "list-group-flush");
+    for (let note of notes) {
+      let li = document.createElement("li");
+      li.classList.add("list-group-item");
+      li.textContent = note.corpo;
+      list_group.appendChild(li);
+    }
+    card.appendChild(list_group);
+    
+    let card_body1 = document.createElement("div");
+    card_body1.classList.add("card-body");
+    
+    let form = document.createElement("form");
+    
+    let input = document.createElement("input");
+    input.type = "text";
+    input.classList.add("form-control");
+    input.placeholder = "Insira seu comentário";
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      postNotesandAtualizarPagina(input.value, id);
+    })
+
+    
+    card.appendChild(card_body1);
+    card_body1.appendChild(form);
+    form.appendChild(input);
+    
+    return card;
+  }
+  
+  function getNotesAndRender(todo) {
+    axios({
+      method: "GET",
+      url: "https://server-json-lms.herokuapp.com/todos/" + todo.id + "/notes",
+    }).then((response) => {
+      let notes = response.data;
+      let card = criarCard(todo.id, todo.titulo, todo.corpo, notes);
+      todo_galeria.appendChild(card);
+    }).catch((error) => {
+      console.log(error);
+    })
+  }
+  
+  function atualizarTodoList() {
+    todo_galeria.innerHTML = "";
+    axios({
+      method: "GET",
+      url: "https://server-json-lms.herokuapp.com/todos"
+    }).then((response) => {
+      let todos = response.data;
+      for (let todo of todos) {
+        getNotesAndRender(todo);
+      }
+    }).catch((error) => {
+      console.log("Caiu no catch!");
+      console.log(error);
+    });
+  }
+
+  atualizarTodoList();
+  
+  let form_novo_todo = document.getElementById("form-novo-todo");
+  let input_form_todo_titulo = document.querySelector("#form-novo-todo #titulo");
+  let input_form_todo_corpo = document.querySelector("#form-novo-todo #corpo");
+  
+  
+  form_novo_todo.addEventListener("submit", (event) => {
+    event.preventDefault();
+    axios({
+      method: "POST",
+      url: "https://server-json-lms.herokuapp.com/todos",
+      data: {
+        titulo: input_form_todo_titulo.value,
+        corpo: input_form_todo_corpo.value,
+      }
+    }).then((response) => {
+      atualizarTodoList();
+    }).catch((error) => {
+      console.log(error);
+    })
+    
+  })
+  
+</script>
+</body>
+
+</html>
