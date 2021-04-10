@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navegador {
+    background-color: rgb(200, 200, 200);
+    display: flex;
+}
+
+.navegador a, .container1 .menu1 a, .container2 .menu2 a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.navegador a:hover, .container1 .menu1 a:hover, .container2 .menu2 a:hover {
+    background-color: rgb(160, 160, 160);
+}
+
+.container1 {
+    display: flex;
+
+    margin-bottom: 20px;
+}
+
+.container1 .menu1 {
+    background-color: rgb(180, 180, 180);
+    flex-grow: 1;
+}
+
+.container1 .conteudo1 {
+    background-color: rgb(160, 160, 160);
+    flex-grow: 3;
+}
+
+.container2 {
+    display: flex;
+}
+
+.container2 .menu2 {
+    background-color: rgb(180, 180, 180);
+    flex-basis: 400px;
+}
+
+.container2 .conteudo2 {
+    background-color: rgb(160, 160, 160);
+    flex-grow: 1;
+}
