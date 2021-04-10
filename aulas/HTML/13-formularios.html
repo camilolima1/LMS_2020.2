@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        Nome: <input type="text" value="João" readonly> <br>
+        Sobrenome: <input type="text" disabled> <br>
+        Senha: <input type="password" size="4" maxlength="4"> <br>
+
+        Opção 1: <input type="radio" name="opcoes" value="op1"> <br>
+        Opção 2: <input type="radio" name="opcoes" value="op2"> <br>
+        Opção 3: <input type="radio" name="opcoes" value="op3"> <br>
+
+        Check 1: <input type="checkbox"> <br>
+        Check 2: <input type="checkbox"> <br>
+
+        <!-- HTML 5 Novos input types -->
+        Número: <input type="number" min="2" max="10"> <br>
+        Data: <input type="date">
+
+        <input type="submit">
+
+    </form>
+</body>
+</html>
+
+<!-- HTML Formulários
+    Formulários HTML servem para coletar informações do usuário
+    1 - Elemento <form>
+        - Container para elementos de fomulário
+        - Elemento Bloco
+        - Enviar informações para servidor
+        Atributo action: Especifica a URL para a qual serão enviados os dados do formulário
+
+        1.1 Elemento <input>
+            - Elemento mais importante de um formulário
+            - Define elementos de entrada de dados do usuário via atributo type
+
+            1.1.1 Atributos <input>
+                - Atributo value: Especifica valor inicial no campo
+                - Atributo readonly: Especifica que campo não pode ser mudado
+                - Atributo disabled: Especifica que campo está desabilitado
+                - Atributo size: Especifica o tamanho máximo em caracteres
+                - Atributo maxlength: Especifica número máximo da caracteres permitidos
+
+        Obs.: Não se confie na validação do HTML. O usuário pode facilmente modificar o código HTML.
+              Sempre faça também a validação no lado servidor.
+-->
