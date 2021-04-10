@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.animacao{
+    width: 100%;
+    position: absolute;
+    animation-name: girarNaTela;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 150;
+}
+
+.container {
+    z-index: -200;
+    overflow: hidden;
+}
+
+.animacao .logo-css{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    
+    animation-name: percorrerTela;
+    animation-duration: 7s;
+    animation-timing-function: linear;
+    
+    animation-iteration-count: infinite;
+    animation-direction:alternate-reverse;
+}
+
+@keyframes percorrerTela{
+    from {
+        transform: translate(0, 0) 
+    }
+    to {
+        transform: translate(100vw, 100vh)
+    }
+    
+}
+
+@keyframes girarNaTela {
+    from {
+        transform: rotateY(0deg)
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.container {
+    display: flex;
+    
+}
+
+nav.nav-superior {
+    display: flex;
+    height: 40px;
+    z-index: 100;
+    background-color: gray;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.8);
+    position: relative;
+}
+
+nav.nav-superior a {
+    /* width: 100%; */
+    display: block;
+    padding: 10px 40px;
+    text-decoration: none;
+    color:white;
+}
+
+nav.nav-superior a:hover {
+    background-color: rgb(62 62 62);
+}
+
+nav.nav-esquerda {
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    flex-basis: 350px;
+    flex-shrink: 0;
+
+    z-index: 50;
+    position: relative;
+
+    background-color: rgba(219, 214, 214);
+
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.8);
+}
+
+nav.nav-esquerda a {
+    padding: 20px;
+    text-decoration: none;
+    color: black;
+    width: auto;
+}
+
+nav.nav-esquerda a:hover {
+    background-color: #a0a0a0;
+}
+
+.conteudo {
+    flex-grow: 1;
+    display: flex;
+
+    overflow: hidden;
+
+    z-index: 20;
+    position: relative;
+
+    flex-direction: column;
+    background-color: rgb(220, 220, 220);
+}
+
+.conteudo .linha-1 {
+    display: flex;
+    background-color: green;
+}
+
+.celula-1 {
+
+    flex-basis: 50%;
+    height: 400px;
+    flex-shrink: 0;
+
+    background-color: rgb(206 203 203);
+}
+
+.accordeon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    
+}
+
+.item-accordeon {
+   
+    width: 100%;
+    overflow: hidden;
+    
+}
+
+.titulo-accordeon {
+    
+    height: 40px;  
+    padding-top: 5px;  
+    cursor: pointer;
+    
+}
+
+.item-accordeon .corpo-accordeon {
+    height: 0px;
+    transition: height 2s linear;
+    background-color: rgba(255, 255, 255, 0.301);
+}
+
+.item-accordeon:hover .corpo-accordeon {
+    height: 240px;
+}
+
+.celula-2 {
+    flex-basis: 50%;
+    flex-shrink: 0;
+
+    height: 400px;
+    background-color: #a9a5a6;
+    overflow: hidden;
+}
+
+.imagem-html{
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.imagem-html .logo-html {
+    height: 100%;
+}
+
+.imagem-html .texto-html5 {
+    background-color: rgba(0,0,0,0.8);
+    position: absolute;
+    bottom: 0;
+    
+    height: 60px;
+    width: 100%;
+
+    text-align: center;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo .linha-2 {
+    display: flex;
+
+    width: 100%;
+    background-color: red;
+}
+
+.celula-3 {
+    flex-grow: 1;
+    height: 400px;
+    background-color: #7d757c;
+}
+
+.celula-4 {
+    flex-grow: 1;
+    height: 400px;
+    background-color: rgb(62 62 62);
+}
+
+.celula-5 {
+    flex-grow: 1;
+    height: 400px;
+    background-color: rgb(33 33 33);
+}
+
+footer {
+    height: 40px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(100 100 100);
+}
+
+@media screen and (max-width: 768px) {
+    nav.nav-superior {
+        box-shadow: none;
+    }
+
+    nav.nav-superior a {
+        padding: 5px;
+        overflow: hidden;
+    }
+
+    nav.nav-esquerda {
+        flex-basis: 400px;
+        box-shadow: none;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .conteudo {
+        z-index: 0;
+    }
+
+    .conteudo .linha-1{
+        flex-direction: column;
+    }
+
+    .linha-1 .celula-1 {
+        flex-basis: 400px;
+    }
+
+    .linha-1 .celula-2 {
+        height: 400px;
+    }
+
+    .conteudo .linha-2 {
+        flex-direction: column;
+    }
+
+}
