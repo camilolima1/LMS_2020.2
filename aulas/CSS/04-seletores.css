@@ -1,0 +1,31 @@
+/* seletor: h1 */
+h1 {
+    color: blue;
+    font-size: 12px;
+}
+/* seletor id */
+#meu-titulo {
+    font-size: 50px;
+}
+
+/* seletor class */
+.meu-titulo-personalizado {
+    color: green;
+}
+
+div p {
+    color:red;
+}
+
+.div-estilizada .p-estilizado {
+    font-size: 20px;
+}
+
+.div-estilizada > .p-estilizado {
+    color:pink;
+}
+
+
+
+
+

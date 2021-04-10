@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./04-seletores.css">
+</head>
+<body>
+
+    <!-- 1 - Seletores apontam para elementos HTML -->
+    <h1>
+        Meu título seletor h1
+    </h1>
+
+    <!-- 2 - ID -->
+    <h1 id="meu-titulo" class="meu-titulo-personalizado">
+        Meu título seletor id
+    </h1>
+
+    <!-- 3 - Classe -->
+    <h1 class="meu-titulo-personalizado">
+        Meu título seletor class
+    </h1>
+
+    <p>
+        Meu paragrafo fora da div
+    </p>
+
+    <!-- 4 - Seletores de elementos internos -->
+    <div>
+        <p>
+            Meu paragrafo dentro da div
+        </p>
+        <p>
+            Meu outro paragrafo dentro da div
+        </p>
+    </div>
+
+    <div>
+        <p>
+            Meu paragrafo dentro de outra div
+        </p>
+    </div
+    >
+    <!-- 5 - Seletores de elementos imediatamente interno -->
+    <div class="div-estilizada">
+        <p class="p-estilizado">
+            Eu quero atingir esse parágrafo somente
+        </p>
+        <div>
+            <p class="p-estilizado">
+                Esse parágrafo não é pra ter cor rosa
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<!-- CSS Sintaxe
+    Uma folha de estilo CSS consiste em conjunto de regras
+    1 - Seletores apontam para elementos HTML
+        ex.: body, h1 .. h6, nav, input, span... 
+        - Cada declaração corresponde a uma propriedade CSS
+    2 - ID
+        - Identifica unicamente um elemento
+
+    3 - Classe
+        - Uma classe pode usada em mais de um elemento
+        - Um elemento pode ter mais de uma classe 
+    
+    4 - Seletores de elementos internos
+        - Seleciona elemento que estão dentro de outros elementos
+        - Exemplo: Selecionar todo elementos <p> que estão dentro de elementos <div>
+
+    5 - Seletores de elementos imediatamente interno
+        - Seleciona elemento que são filhos imediatos
+        - Exemplo: Selecionar todo elementos <p> que são filhos imediato de elementos <div>
+-->

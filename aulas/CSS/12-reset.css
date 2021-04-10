@@ -1,0 +1,17 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.minha-div {
+    background-color: aqua;
+}
+
+/* Reset
+    1 - Resetar página
+    - O Body por padrão já vem com estilos, assim como outros elemntos;
+    - O css do * acima faz esses estilos serem zerados em toda a página. 
+    - Para ver mais exemplos:
+        https://meyerweb.com/eric/tools/css/reset/
+*/

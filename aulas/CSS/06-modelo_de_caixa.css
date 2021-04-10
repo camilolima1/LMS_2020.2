@@ -1,0 +1,62 @@
+.div1 {
+    background-color: blue;
+    height: 200px;
+    width: 300px;
+    border-style: dashed dotted;
+    border-width: 5px;
+    border-color: green;
+
+    /* margin-bottom: 30px;
+    margin-left: 40px;
+    margin-top: 50px;
+    margin-right: 20px; */
+
+    /* Atalho para margem - de cima é equivalente ao de baixo */
+    margin: 50px 20px 30px 40px;
+}
+
+.div2 {
+    background-color: blue;
+    height: 200px;
+    width: 300px;
+    border: 6px solid black;
+
+    margin-top: 30px;
+}
+
+
+/* Bordas
+1 - Propriedade border style
+    - Especifica qual o tipo de borda
+    - Valores: 
+        dotted: linha pontilhada
+        dashed: linha tracejada
+        solid: linha sólida
+        double: linha dupla
+        groove: 3D grooved border
+        ridge: 3D ridged border
+        inset: 3D inset border
+        outset: 3D outset border
+        none: sem borda
+        hidden: borda escondida
+    - Pode colocar 1 a 4 valores (top border, right border, bottom border, and the left border)
+
+    2 - Propriedade border-width
+        - Largura da borda
+        - 1 a 4 valores em ordem: top border, right border, bottom border, and the left border 
+        
+*/
+
+    /* Margens
+    1 - Propriedades
+        margin-top, margin-right, margin-bottom e margin-left
+
+        - Valores:
+            auto - o navegador calcula a margem para centralizar o elemento (também serve para centralizar div!)
+            tamanho em px, pt, cm, etc.
+            % da largura do elemento que o contém
+            inherit a margem é herdada do elemento pai
+        - Dica: valores negativos são permitidos;
+        Atalho para margin-top, margin-right, margin-bottom e margin-left (nessa ordem)
+                    ex.: margin: 50px 20px 30px 40px; 
+*/

@@ -1,0 +1,36 @@
+.div1 {
+    background-color: green;
+    width: 400px;
+    height: 400px;
+    /* padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px; */
+
+    /* O atalho abaixo é igual ao de cima */
+    padding: 20px;
+}
+
+.div1 .interno{
+    background-color: pink;
+    height: 200px;
+    width: 200px;
+}
+
+.div2 {
+    background-color: blue;
+    width: 200px;
+    height: 400px;
+}
+
+/* Padding
+    1 - Padding gera espaço ao redor do conteúdo
+        Propriedade
+            - padding-top, padding-right, padding-bottom e padding-left
+            - Valores:
+                tamanho em px,pt, cm, etc.
+                % da largura do elemento que o contém
+                inherit - a margem é herdada do elemento pai 
+            
+                - Atalho para padding-top, padding-right, padding-bottom e padding-left
+*/

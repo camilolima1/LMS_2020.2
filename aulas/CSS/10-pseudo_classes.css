@@ -1,0 +1,49 @@
+/* seletor = elemento html */
+a:link {
+    color:red;
+}
+
+a:visited {
+    color:green;
+}
+
+a:hover {
+    color: pink;
+}
+
+a:active {
+    color: blue;
+}
+
+/* seletor = classe */
+.meu-link:link {
+    color:red;
+}
+
+.meu-link:visited {
+    color:green;
+}
+
+.meu-link:hover {
+    color: pink;
+}
+
+.meu-link:active {
+    color: blue;
+}
+
+/* Pseudo-classes
+    - Pseudo-classes definem um estado especial do elemento
+    ex.: selector:pseudo-class {
+        property:value;
+    }
+    - O seletor pode ser um elemento ou uma classe;
+
+    - elementos podem ser estiizados segundo seus estados
+        a:link - um link não visitado
+        a:visited - um link visitado
+        a:hover - um link quando o mouse passa por cima
+        a:active - um link no momento que é clicado
+
+    Obs.: a:hover tem que vir depois de a:link e a:visited. a:active deve vir depois de a:hover 
+*/
