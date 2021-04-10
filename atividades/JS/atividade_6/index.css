@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.buttons {
+    border-radius: 4px;
+    border-width: 1px;
+    background-color: #373737;
+    color: white;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 150ms, box-shadow 150ms;
+
+    cursor: pointer;
+}
+
+.buttons:active {
+    box-shadow:  3px 3px 2px rgba(0, 0, 0, 0.8);
+    transform: translate(2px, 2px);
+}
+
+.buttons:hover {
+    filter: brightness(0.9);
+}
+
+.page {
+    width: 900px;
+    height: 100vh;
+    margin: auto;
+    background-color: lightgray;
+}
+
+.header {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    background-color: #373737;
+    color: white;
+    font-size: large;
+    padding: 4px 0px;
+}
+
+.header .logo {
+    left: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 8px;
+    height: 56px;
+    justify-content: center;
+
+    /* font-size: 24px; */
+    cursor: pointer;
+    user-select: none;
+}
+
+.header .logo img {
+    margin-right: 4px;
+    transform: rotate(-40deg);
+}
+
+.header .usuario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: auto;
+    padding: 8px;
+    height: 56px;
+    background-color: #313131;
+}
+
+.usuario .nome-usuario {
+    margin: auto;
+    padding: 4px;
+}
+
+.container {
+    display: flex;
+}
+
+.menu-lat-esq {
+    width: 200px;
+    height: calc(100vh - 56px);
+
+    color: white;
+    background-color: #8e8e8e;
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.card-grupo {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.grupo {
+    width: 100%;
+    background-color: #8e8e8e;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.grupo:hover {
+    filter: brightness(0.9);
+}
+
+.grupo .img-grupo{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    margin: 4px;
+}
+
+.grupo .img-grupo img{
+    margin-top: auto;
+    width: 100%;
+    height: 90%;
+    border-radius: 50%;
+}
+
+.grupo .nome-grupo {
+    margin-left: 4px;
+}
+
+.form-novo-grupo {
+    width: 100%;
+    margin: auto 4px 4px 4px;
+}
+
+.form-novo-grupo .nome-novo-grupo {
+    padding: 4px;
+    margin: 4px 0px;
+    border-radius: 4px;
+    border-width: 1px;
+}
+
+.form-novo-grupo .button-form {
+    width: 80px;
+    padding: 4px;
+}
+
+.mensagem {
+    height: calc(100vh - 56px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.mensagem .grupo-escolhido {
+    width: 100%;
+    padding: 4px;
+    font-weight: 900;
+    display: none;
+}
+
+.mensagem .grupo-escolhido.active {
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 4px;
+}
+
+.container-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.container-card .card-mensagem {
+    width: 98%;
+    border: 2px solid #616161;
+    margin: 4px;
+    padding: 8px;
+    background-color: #a2a2a2;
+    border-radius: 4px;
+}
+
+.card-mensagem .card-titulo {
+    margin-bottom: 4px;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.card-mensagem .card-texto {
+    margin-left: 28px;
+}
+
+.form-nova-mensagem {
+    width: 100%;
+    margin: 4px;
+    margin-top: auto;
+}
+
+.form-nova-mensagem .mensagem-form {
+    width: 84%;
+    padding: 16px;
+    border-radius: 4px;
+    border-width: 1px;
+    font-size: 16px;
+}
+
+.form-nova-mensagem .button-form {
+    margin-top: 4px;
+    margin-left: 4px;
+    padding: 16px;
+    width: 90px;
+    font-size: 16px;
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.85);
+
+}
+
+.overlay.deactivate {
+    display: none;
+}
+
+.modal-container {
+    background-color: #d3d3d3;
+    color: black;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 0px 0px 20px #000;
+}
+
+.modal-header {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 2px solid #a2a2a2; 
+}
+
+.container-logar {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+.modal-body {
+    width: 100%;
+}
+
+.aviso {
+    width: 90%;
+    display: none;
+    font-weight: 900;
+}
+
+.aviso.active {
+    color:rgba(44, 20, 181, 1);
+    margin: 4px;
+    display: block;
+}
+
+.aviso-grupo {
+    width: 90%;
+    display: none;
+    font-weight: 900;
+}
+
+.aviso-grupo.active {
+    color:rgba(44, 20, 181, 1);
+    margin: 4px;
+    display: block;
+}
+
+.modal-body .login-nome {
+    width: 100%;
+    padding: 16px;
+    border-radius: 4px;
+    border-width: 1px;
+    font-size: 16px;
+}
+
+.modal-footer {
+    width: 100%;
+    margin-top: 4px;
+    display: flex;
+}
+
+.modal-footer .button-logar {
+    margin: 4px 0px 4px auto;
+    width: 60px;
+    height: 40px;
+    padding: 4px;
+}
