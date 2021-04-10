@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.overlay-modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    display: none;
+    justify-content: center;
+    align-items: center ;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    animation-name: aparecer-overlay;
+    animation-duration: 500ms;
+}
+
+.overlay-modal.active {
+    display: flex;
+}
+
+.modal-container {
+    background-color: #f4f4f4;
+    width: 400px;
+    height: 256px;
+    border-radius: 5px;
+    position: relative;
+
+    animation: modal-cair 500ms;
+}
+
+.modal-container .modal-header {
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.226);
+}
+
+.modal-container .modal-header .modal-close {
+    margin:  5px 5px 5px auto;
+    background-color: transparent;
+    border: 0;
+    font-weight: 900;
+    cursor: pointer;
+    outline: none;
+}
+
+.modal-container .modal-content {
+    padding: 10px;
+    width: 100%;
+}
+
+.modal-container .modal-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.modal-container .modal-content input {
+    width: 50%;
+    margin-top: 10px;
+    padding: 5px;
+    outline: none;
+}
+
+.modal-container .modal-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    border: solid 1px rgba(5, 5, 5, 0.2);
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-container .modal-footer .button-cancelar{
+    margin-right: 5px;
+    padding: 5px;
+    color: white;
+    background-color: #0062cc;
+    border-color: solid 2px gray;
+    border-radius: 5px;
+}
+
+.modal-container .modal-footer .submit-button {
+    padding: 5px;
+    color: white;
+    background-color: #0062cc;
+    border-color: solid 2px gray;
+    border-radius: 5px;
+}
+
+@keyframes aparecer-overlay{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes modal-cair{
+    from{
+        transform: translate(0px, -200px)
+    }
+    to{
+        transform: translate(0px, 0px);
+    }
+}
+
+.nav-superior {
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.nav-superior .nav-header{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    background-color:#002070;
+
+    cursor: pointer;
+}
+
+.nav-superior .nav-header .logo {
+    margin-right: auto;
+    font-style: oblique;
+    font-weight: 900;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-superior .nav-header .postar {
+    margin-right: 20px;
+    padding: 5px;
+    outline: none;
+    background-color: #efefef;
+    border: none;
+    /* border: solid 2px #767676; */
+    box-shadow: 2px 2px 2px rgb(0,0,0);
+
+    cursor: pointer;
+}
+
+.nav-superior .nav-header .postar:active {
+    transform: translate(1px, 1px);
+}
+
+.nav-superior .nav-header .icone-menu {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 6px;
+    outline: none;
+    background-color: #efefef;
+    border-inline-end: rgba(5, 5, 5, 0.2);
+
+    cursor: pointer;
+}
+
+.menu-retratil {
+    width: 0;
+    height: calc(100vh - 40px);
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: rgb(228, 228, 228);
+
+    transition: width 600ms;
+}
+
+.menu-retratil.active{
+    width: 400px;
+}
+
+.menu-retratil a {
+    
+    display: block;
+    /* align-items: center; */
+    color: black;
+    /* align-content: space-between; */
+    background-color: transparent;
+    padding: 12px;
+    text-decoration: none;
+    
+}
+
+.menu-retratil a:hover {
+    background-color:rgb(211, 205, 205);
+}
+
+.container {
+    width: 100%;
+}
+
+.container .active{
+    margin-left: 400px;
+}
+
+.container .conteudo {
+    margin-top: 40px;
+    padding: 5px 40px;
+    background-color: #f4f4f4;
+
+    transition: margin-left 600ms;
+}
+
+.container .conteudo.desfocar, .nav-header.desfocar, .menu-retratil.desfocar {
+    filter: blur(4px);
+}
+
+.chat-mural {
+    padding: 20px;
+    width: auto;
+}
+
+.chat-mural .card-destaque {
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.chat-mural .card {
+    border: 2px solid gray;
+    margin-top: 20px;
+    padding: 10px;
+
+}
