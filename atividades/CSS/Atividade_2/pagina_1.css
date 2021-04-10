@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    margin: 10px;
+}
+
+p {
+    font-family: "Times New Roman", Times, serif;
+}
+
+article {
+    padding: 10px;
+    border-style: groove;
+}
+
+.navegador {
+    display: flex;
+    background-color: rgb(49, 49, 189);
+}
+
+.navegador > .botao-nav {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navegador > .botao-nav:hover{
+    background-color: rgb(0, 0, 255);
+}
+
+.botao-dropdown {
+    display: inline-block;
+}
+
+.botao-dropdown .texto-dropdown {
+    background-color: rgb(49, 49, 189);
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.botao-dropdown .conteudo-dropdown {
+    display: none;
+    width: 300px;
+    background-color: rgb(49, 49, 189);
+    position: absolute;
+
+}
+
+.botao-dropdown:hover .conteudo-dropdown {
+    display: block;
+}
+
+.botao-dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+
+.botao-dropdown a:hover{
+    background-color: blue;
+}
+
+
+
