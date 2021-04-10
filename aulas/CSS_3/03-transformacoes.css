@@ -1,0 +1,15 @@
+body{
+    display: flex;
+}
+
+.outra-div {
+    border: 1px solid black;
+}
+
+.minha-div {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    transform: translate(50px, 100px) rotate(20deg) 
+    scale(1.5, 1.5) skew(30deg);
+}
